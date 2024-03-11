@@ -10,7 +10,6 @@ class Postadmin(admin.ModelAdmin):
     list_display = ('id','title','created_date')
     list_filter = ('status','created_date')
     search_fields = ('title','content')
-    ordering = ['-created_date']
 
 
 
