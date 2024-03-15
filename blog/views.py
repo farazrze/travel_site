@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import Post
 
 def home(request):
@@ -6,5 +6,13 @@ def home(request):
     context = {'posts':posts}
     return render(request,'blog/blog-home.html',context)
 
-def single(request):
-    return render(request,'blog/blog-single.html')
+def single(request,pid):
+    posts=get_object_or_404(Post,id=pid)
+    context = {'posts':posts}
+    return render(request,'blog/blog-single.html',context)
+
+
+def test(request,pid):
+    posts = Post.objects.get(id=pid)
+    context ={'posts':posts}
+    return render(request,'test.html',context)
