@@ -7,7 +7,7 @@ class Postadmin(admin.ModelAdmin):
     empty_value_display = 'empty'
     #fields = ('title','content')
     #exclude = ('status',)
-    list_display = ('id','title','created_date')
+    list_display = ('id','title','author','created_date')
     list_filter = ('status','created_date')
     search_fields = ('title','content')
 
