@@ -1,4 +1,5 @@
 {% load blog_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-
-    <p>test: {% post %} </p>
+    {% post as tp %}
+    {% for i in tp %}
+    <p>{{ i.content|snippet:150 }} </p>
+    {% endfor %}
 
    
 </body>
