@@ -8,10 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    {% post as tp %}
-    {% for i in tp %}
-    <p>{{ i.content|snippet:150 }} </p>
-    {% endfor %}
+    {% popular %}
 
    
 </body>

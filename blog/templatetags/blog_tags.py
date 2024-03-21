@@ -11,6 +11,11 @@ def test():
 def snippet(value,arg=20):
     return value[:arg]
 
+@register.inclusion_tag('popularpost.html')
+def popular():
+    posts=Post.objects.filter(status=1)
+    return {'posts':posts}
+
 
 
 
