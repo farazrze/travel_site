@@ -1,10 +1,12 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Post
 
-def home(request,cat_name=None):
+def home(request,**kwargs):
     posts=Post.objects.filter(status=1)
-    if cat_name:
-        posts = posts.filter(category__name=cat_name)
+    if kwargs.get('cat_name') != None:
+        posts = posts.filter(category__name=kwargs['cat_name'])
+    if kwargs.get('author_username') != None:
+        posts = posts.filter(author__username=kwargs['author_username'])
     context = {'posts':posts}
     return render(request,'blog/blog-home.html',context)
 
