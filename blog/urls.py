@@ -7,4 +7,6 @@ urlpatterns = [
     path('',home,name='home'),
     path('<int:pid>',single,name='single'),
     path('test',test,name='test'),
+    path('category/<str:cat_name>',blog_category,name='category'),
+    path('category/<str:cat_name>',blog_category2,name='category2'),
 ]   
