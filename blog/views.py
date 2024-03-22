@@ -1,8 +1,10 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Post
 
-def home(request):
+def home(request,cat_name=None):
     posts=Post.objects.filter(status=1)
+    if cat_name:
+        posts = posts.filter(category__name=cat_name)
     context = {'posts':posts}
     return render(request,'blog/blog-home.html',context)
 
@@ -23,8 +25,3 @@ def blog_category(request,cat_name):
     return render(request,'blog/blog-home.html',context)
 
 
-def blog_category2(request,cat_name):
-    posts = Post.objects.filter(status=1)
-    posts = posts.filter(category__name=cat_name)
-    context={'posts':posts}
-    return render(request,'blog/categories.html',context)
