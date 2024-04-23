@@ -31,11 +31,10 @@ def index(request):
 
 def test_view(request):
     if request.method=='POST':
-        form=Nameform(request.POST)
+        form=ContactForms(request.POST)
         if form.is_valid():
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            subject = form.cleaned_data['subject']
-            message = form.cleaned_data['message']
-    form = Nameform()
+            form.save()
+
+
+    form = ContactForms()
     return render(request,'test_view.html',{'form':form})
