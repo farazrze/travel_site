@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import *
 from pages.forms import *
 from django.http import *
+from django.contrib import messages
 
 def about(request):
     return render(request,'about.html')
@@ -11,6 +12,9 @@ def contact(request):
         form = ContactForms(request.POST)
         if form.is_valid():
             form.save()
+            messages.add_message(request,messages.SUCCESS,'your information was submited')
+        else:
+            messages.add_message(request,messages.ERROR,"your information didn't submited")
     form = ContactForms()
     return render(request,'contact.html',{'form':form})
 
