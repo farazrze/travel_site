@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'pages',
     'blog',
     'django.contrib.humanize',
-    'django_extensions'
+    'django_extensions',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
