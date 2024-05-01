@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'pages',
     'blog',
     'django.contrib.humanize',
-    'django_extensions',
-    'django.contrib.sites',
+    'django_extensions'
 ]
 
 SITE_IT = 1
