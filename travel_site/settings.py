@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 ]
 
+SITE_IT = 1
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
