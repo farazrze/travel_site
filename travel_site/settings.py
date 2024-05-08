@@ -43,8 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django_extensions',
     'django.contrib.sitemaps',
+    'robots',
     
 ]
+
+
+ROBOTS_USE_HOST = True
+ROBOTS_USE_SITEMAP = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
