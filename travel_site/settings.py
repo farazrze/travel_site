@@ -46,8 +46,11 @@ INSTALLED_APPS = [
     'robots',
     'debug_toolbar',
     'taggit',
+    'django_summernote',
     
 ]
+
+SUMMERNOTE_THEME = 'bs4'
 
 
 ROBOTS_USE_HOST = True
