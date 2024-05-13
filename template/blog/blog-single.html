@@ -299,8 +299,8 @@
 								<div class="single-sidebar-widget tag-cloud-widget">
 									<h4 class="tagcloud-title">Tag Clouds</h4>
 									<ul>
-										{% for tag in post.tag.all %}
-										<li><a href="{% url 'bloh:tag' tag_name=tag.name %}">{{tag.name}}</a></li>
+										{% for tag in posts.tag.all %}
+										<li><a href="{% url 'blog:tag' tag_name=tag.name %}">{{tag.name}}</a></li>
 										{% endfor %}
 									</ul>
 								</div>								
