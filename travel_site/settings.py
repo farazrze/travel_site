@@ -47,14 +47,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'taggit',
     'django_summernote',
-<<<<<<< HEAD
-    'captcha'
-=======
->>>>>>> parent of 2a2282e (add captcha)
     
 ]
-
-SUMMERNOTE_THEME = 'bs4'
 
 
 ROBOTS_USE_HOST = True
