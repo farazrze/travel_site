@@ -47,7 +47,10 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'taggit',
     'django_summernote',
-    'captcha',
+<<<<<<< HEAD
+    'captcha'
+=======
+>>>>>>> parent of 2a2282e (add captcha)
     
 ]
 
