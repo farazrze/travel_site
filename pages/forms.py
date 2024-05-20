@@ -1,5 +1,6 @@
 from django import forms
 from .models import *
+#from captcha.fields import CaptchaField
 
 
 class Nameform(forms.Form):
@@ -9,10 +10,7 @@ class Nameform(forms.Form):
     message=forms.CharField(widget=forms.Textarea)
 
 class ContactForms(forms.ModelForm):
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 2a2282e (add captcha)
+    #captcha = CaptchaField()
     class Meta:
         model = Contact
         fields = '__all__'
