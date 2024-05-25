@@ -12,7 +12,13 @@ class Postadmin(admin.ModelAdmin):
     search_fields = ('title','content')
 
 
-
+class CommentAdmin(admin.ModelAdmin):
+    date_hierarchy = 'created_date'
+    empty_value_display = 'empty'
+    list_display = ('name','approve','created_date')
+    list_filter = ('post','approve')
+    search_fields = ('name','post')
 
 admin.site.register (Post,Postadmin)
 admin.site.register (Category)
+admin.site.register (Comment,CommentAdmin)
