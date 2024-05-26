@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404
-from .models import Post
+from .models import *
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 
 def home(request,**kwargs):
@@ -26,7 +26,8 @@ def home(request,**kwargs):
 def single(request,pid):
     n_post=Post.objects.filter(status=1)
     posts=get_object_or_404(n_post,id=pid)
-    context = {'posts':posts}
+    comments = Comment.objects.filter(post=posts.id,approve=True).order_by('-created_date')
+    context = {'posts':posts,'comments':comments}
     return render(request,'blog/blog-single.html',context)
 
 
