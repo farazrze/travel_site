@@ -1,6 +1,8 @@
 from django.shortcuts import render,get_object_or_404
 from .models import *
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
+from .forms import *
+from django.contrib import messages
 
 def home(request,**kwargs):
     posts=Post.objects.filter(status=1)
@@ -24,6 +26,14 @@ def home(request,**kwargs):
     return render(request,'blog/blog-home.html',context)
 
 def single(request,pid):
+    if request.method=='POST':
+        form=CommentForms(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request,messages.SUCCESS,'your comment was submited')
+        else:
+            messages.add_message(request,messages.ERROR,"your comment didn't submited")
+
     n_post=Post.objects.filter(status=1)
     posts=get_object_or_404(n_post,id=pid)
     comments = Comment.objects.filter(post=posts.id,approve=True).order_by('-created_date')
