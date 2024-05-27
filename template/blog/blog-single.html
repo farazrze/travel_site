@@ -139,7 +139,7 @@
 
 							<div class="comment-form">
 								<h4>Leave a Comment</h4>
-								<form method="post" action='{% url "blog:single" pid=post.id %}'></form>
+								<form method="post" action='{% url "blog:single" pid=posts.id %}'></form>
 								{% csrf_token %}
 								<form>
 									<input type="hidden" name="post" value={{post.id}}>
