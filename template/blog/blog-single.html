@@ -142,7 +142,7 @@
 								<form method="post" action='{% url "blog:single" pid=posts.id %}'></form>
 								{% csrf_token %}
 								<form>
-									<input type="hidden" name="post" value={{post.id}}>
+									<input type="hidden" name="post" value={{posts.id}}>
 									<div class="form-group form-inline">
 										<div class="form-group col-lg-6 col-md-12 name">
 											<input type="text" class="form-control" name="name" placeholder="Enter Name"
@@ -159,7 +159,7 @@
 									<div class="form-group">
 										<textarea class="form-control mb-10" rows="5" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
 									</div>
-									<a href="#" class="primary-btn text-uppercase">Post Comment</a>	
+									<button type="submit" class="primary-btn text-uppercase">Post Comment</button>	
 								</form>
 							</div>
 							
