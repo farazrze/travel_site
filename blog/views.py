@@ -37,7 +37,8 @@ def single(request,pid):
     n_post=Post.objects.filter(status=1)
     posts=get_object_or_404(n_post,id=pid)
     comments = Comment.objects.filter(post=posts.id,approve=True).order_by('-created_date')
-    context = {'posts':posts,'comments':comments}
+    form = CommentForms()
+    context = {'posts':posts,'comments':comments,'form':form}
     return render(request,'blog/blog-single.html',context)
 
 
