@@ -16,7 +16,8 @@ def contact(request):
         else:
             messages.add_message(request,messages.ERROR,"your information didn't submited")
     form = ContactForms()
-    return render(request,'contact.html',{'form':form})
+    context = {'form':form}
+    return render(request,'contact.html')
 
 def elements(request):
     return render(request,'elements.html')
