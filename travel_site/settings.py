@@ -38,16 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'pages',
-    'blog',
     'django.contrib.humanize',
     'django_extensions',
     'django.contrib.sitemaps',
+    'django_summernote',
+    
+    
+    'pages',
+    'blog',   
     'robots',
     'debug_toolbar',
     'taggit',
-    'django_summernote',
     #'captcha',
+    'accounts',
 
     
 ]

@@ -19,6 +19,7 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},name="django.contrib.sitemaps.views.sitemap"),
     path('robots.txt',include('robots.urls')),
     path("__debug__/", include("debug_toolbar.urls")),
+    path('accounts/',include('accounts.urls'))
     #path('captcha/', include('captcha.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
