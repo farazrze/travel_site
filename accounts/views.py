@@ -47,13 +47,13 @@ def logout_view(request):
 
 def signup_view(request):
     if not request.user.is_authenticated:
-        if request.method=='POST':
-            form=UserCreationForm(request.POST)
+        if request.method == 'POST':
+            form = UserCreationForm(request.POST)
             if form.is_valid():
                 form.save()
                 return redirect('/')
-        form=UserCreationForm()
-        context={'form':form}
+        form = UserCreationForm()
+        context = {'form':form}
         return render(request,'accounts/signup.html',context)
     else:
         return redirect('/')
